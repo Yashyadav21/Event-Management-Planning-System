@@ -4,13 +4,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-08-04 09:57:54</sys_created_on>
-            <sys_id>fb196ddf838322106d5af496feaad365</sys_id>
+            <sys_created_on>2025-08-04 12:30:36</sys_created_on>
+            <sys_id>641cca5b834722106d5af496feaad34d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Schedule Details" display_value="Schedule Details" name="x_1792507_event_ma_schedule" sys_domain="global" view="Default view">3b48ad9f838322106d5af496feaad30a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-04 09:57:54</sys_updated_on>
+            <sys_updated_on>2025-08-04 12:30:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>event_id</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-08-04 09:57:54</sys_created_on>
-            <sys_id>73196ddf838322106d5af496feaad366</sys_id>
+            <sys_created_on>2025-08-04 12:30:36</sys_created_on>
+            <sys_id>ec1cca5b834722106d5af496feaad34d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Schedule Details" display_value="Schedule Details" name="x_1792507_event_ma_schedule" sys_domain="global" view="Default view">3b48ad9f838322106d5af496feaad30a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-04 09:57:54</sys_updated_on>
+            <sys_updated_on>2025-08-04 12:30:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>activity_name</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-08-04 09:57:54</sys_created_on>
-            <sys_id>f7196ddf838322106d5af496feaad366</sys_id>
+            <sys_created_on>2025-08-04 12:30:36</sys_created_on>
+            <sys_id>641cca5b834722106d5af496feaad34e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Schedule Details" display_value="Schedule Details" name="x_1792507_event_ma_schedule" sys_domain="global" view="Default view">3b48ad9f838322106d5af496feaad30a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-04 09:57:54</sys_updated_on>
+            <sys_updated_on>2025-08-04 12:30:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,27 +46,27 @@
             <element>start_time</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-08-04 09:57:54</sys_created_on>
-            <sys_id>7f196ddf838322106d5af496feaad366</sys_id>
+            <sys_created_on>2025-08-04 12:30:36</sys_created_on>
+            <sys_id>e81cca5b834722106d5af496feaad34e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Schedule Details" display_value="Schedule Details" name="x_1792507_event_ma_schedule" sys_domain="global" view="Default view">3b48ad9f838322106d5af496feaad30a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-04 09:57:54</sys_updated_on>
+            <sys_updated_on>2025-08-04 12:30:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>u_glide_date_time_28</element>
+            <element>end_time</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-08-04 09:57:54</sys_created_on>
-            <sys_id>f3196ddf838322106d5af496feaad367</sys_id>
+            <sys_created_on>2025-08-04 12:30:36</sys_created_on>
+            <sys_id>601cca5b834722106d5af496feaad34f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Schedule Details" display_value="Schedule Details" name="x_1792507_event_ma_schedule" sys_domain="global" view="Default view">3b48ad9f838322106d5af496feaad30a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-04 09:57:54</sys_updated_on>
+            <sys_updated_on>2025-08-04 12:30:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -74,13 +74,13 @@
             <element>location</element>
             <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-08-04 09:57:54</sys_created_on>
-            <sys_id>7b196ddf838322106d5af496feaad367</sys_id>
+            <sys_created_on>2025-08-04 12:30:36</sys_created_on>
+            <sys_id>e41cca5b834722106d5af496feaad34f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Schedule Details" display_value="Schedule Details" name="x_1792507_event_ma_schedule" sys_domain="global" view="Default view">3b48ad9f838322106d5af496feaad30a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-08-04 09:57:54</sys_updated_on>
+            <sys_updated_on>2025-08-04 12:30:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

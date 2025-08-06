@@ -2,7 +2,7 @@
     <element audit="true" db_object_id="780f5dd3838322106d5af496feaad363" extends="task" label="Feedback" max_length="40" name="x_1792507_event_ma_feedback" type="collection">
         <element attributes="encode_utf8=false" label="Attendee Id" max_length="32" name="attendee_id" reference="x_1792507_event_ma_attendee" type="reference"/>
         <element attributes="encode_utf8=false" label="Event Id" max_length="32" name="event_id" reference="x_1792507_event_ma_event_record" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Rating" max_length="40" name="rating" type="string">
+        <element attributes="edge_encryption_enabled=true" audit="true" choice="1" label="Rating" max_length="40" name="rating" type="string">
             <choice>
                 <element inactive_on_update="false" label="Poor" sequence="3" value="poor"/>
                 <element inactive_on_update="false" label="Average" sequence="2" value="average"/>

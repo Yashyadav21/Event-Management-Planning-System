@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1792507_event_ma.FeedbackUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>FeedbackUtils</name>
+        <script><![CDATA[var FeedbackUtils = Class.create();
+FeedbackUtils.prototype = {
+    initialize: function(eventid) {
+        this.eventid = eventid;
+    },
+
+    fetchAllFeedback: function() {
+        var res = [];
+        var gr = new GlideRecord('x_1792507_event_ma_feedback');
+        gr.query();
+        while (gr.next()) {
+            res.push({
+                number: gr.getValue('number'),
+                attendee: gr.getDisplayValue('attendee_id'),
+                rating: gr.getValue('rating'),
+                comments: gr.getValue('comments')
+            });
+        }
+        return JSON.stringify(res);
+    },
+    getFeedback: function(id) {
+        var res = [];
+        var feedback = new GlideRecord('x_1792507_event_ma_feedback');
+        feedback.addQuery('number', id);
+        feedback.query();
+        if (feedback.next()) {
+            res.push({
+                id: feedback.getDisplayValue(),
+                rating: feedback.getValue('rating'),
+            });
+        }
+        return JSON.stringify(res);
+
+    },
+    checkFeedback: function(id) {
+        var feedback = new GlideRecord('x_1792507_event_ma_feedback');
+        feedback.addQuery('number', id);
+        feedback.query();
+        if (feedback.next()) {
+            if (feedback.getValue('rating') == 'excellent' || feedback.getValue('rating') == 'good') {
+                return 'positive';
+            }
+        }
+        return 'negative';
+    },
+    getEventFeedback: function() {
+        var res = [];
+        var feedback = new GlideRecord('x_1792507_event_ma_feedback');
+        feedback.addQuery('event_id', this.eventid);
+        feedback.query();
+        if (feedback.next()) {
+            res.push({
+                id: feedback.getDisplayValue(),
+                rating: feedback.getValue('rating'),
+            });
+        }
+        return JSON.stringify(res);
+
+    },
+
+
+
+    type: 'FeedbackUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 14:51:57</sys_created_on>
+        <sys_id>95c5b7278303a2106d5af496feaad357</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>FeedbackUtils</sys_name>
+        <sys_package display_value="Event Management &amp;amp; Planning System" source="x_1792507_event_ma">eb0d855f830322106d5af496feaad3a5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Event Management &amp;amp; Planning System">eb0d855f830322106d5af496feaad3a5</sys_scope>
+        <sys_update_name>sys_script_include_95c5b7278303a2106d5af496feaad357</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 18:27:34</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1792507_event_ma.EventUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>EventUtils</name>
+        <script><![CDATA[var EventUtils = Class.create();
+EventUtils.prototype = {
+    initialize: function(eventid) {
+        this.eventid = eventid;
+    },
+
+	fetchAllEvents: function() {
+        var res = [];
+        var gr = new GlideRecord('x_1792507_event_ma_event_record');
+        gr.query();
+        while (gr.next()) {
+            res.push({
+                number: gr.getValue('number'),
+                event_name: gr.getValue('event_name'),
+                event_date: gr.getValue('event_date'),
+                location: gr.getValue('location'),
+                summary: gr.getValue('summary')
+            });
+        }
+        return JSON.stringify(res);
+    },
+
+    getDetailsByID: function() {
+        var res = [];
+        var event = new GlideRecord('x_1792507_event_ma_event_record');
+        event.addQuery('number', this.eventid);
+        event.query();
+        while (event.next()) {
+            res.push({
+                eventid: event.getDisplayName('event_id'),
+                EventName: event.getValue('event_name'),
+                EventDate: event.getValue('event_date'),
+                Location: event.getValue('location')
+
+            });
+        }
+        return JSON.stringify(res);
+    },
+    isVip: function() {
+        var event = new GlideRecord('x_1792507_event_ma_event_record');
+        event.addQuery('number', this.eventid);
+        event.query();
+        if (event.next()) {
+            if (event.getValue('vip'))
+                return true;
+        }
+        return false;
+    },
+    remainingBudget: function() {
+        var event = new GlideRecord('x_1792507_event_ma_budget');
+        event.addQuery('event_id', this.eventid);
+        event.query();
+        if (event.next()) {
+            event.x_amount_remaining = event.getValue('total_budget') - event.getValue('amount_spent');
+
+            event.update();
+        }
+    },
+    getEventTasks: function() {
+        var res = [];
+        var eventtask = new GlideRecord('x_1792507_event_ma_event_task');
+        eventtask.addQuery('event_id', this.eventid);
+        eventtask.query();
+        if (eventtask.next()) {
+            res.push({
+                id: eventtask.getDisplayValue()
+            });
+        }
+        return JSON.stringify(res);
+
+    },
+    getEventAttendee: function() {
+        var res = [];
+        var attendee = new GlideRecord('x_1792507_event_ma_attendee');
+        attendee.addQuery('event_id', this.eventid);
+        attendee.query();
+        if (attendee.next()) {
+            res.push({
+                id: attendee.getDisplayValue(),
+                firstname: attendee.getValue('first_name'),
+                lastname: attendee.getValue('last_name')
+            });
+        }
+        return JSON.stringify(res);
+
+    },
+    getEventVendor: function() {
+        var res = [];
+        var vendor = new GlideRecord('x_1792507_event_ma_vendor');
+        vendor.addQuery('event_id', this.eventid);
+        vendor.query();
+        if (vendor.next()) {
+            res.push({
+                id: vendor.getDisplayValue(),
+                name: vendor.getValue('vendor_name'),
+            });
+        }
+        return JSON.stringify(res);
+
+    },
+    getEventBudget: function() {
+        var res = [];
+        var budget = new GlideRecord('x_1792507_event_ma_budget');
+        budget.addQuery('event_id', this.eventid);
+        budget.query();
+        if (budget.next()) {
+            res.push({
+                id: budget.getDisplayValue(),
+                totalBudget: budget.getValue('total_budget'),
+            });
+        }
+        return JSON.stringify(res);
+
+    },
+    getEventFeedback: function() {
+        var res = [];
+        var feedback = new GlideRecord('x_1792507_event_ma_feedback');
+        feedback.addQuery('event_id', this.eventid);
+        feedback.query();
+        if (feedback.next()) {
+            res.push({
+                id: feedback.getDisplayValue(),
+                rating: feedback.getValue('rating'),
+            });
+        }
+        return JSON.stringify(res);
+
+    },
+
+    type: 'EventUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 14:47:24</sys_created_on>
+        <sys_id>70b3bf638303a2106d5af496feaad3ba</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>EventUtils</sys_name>
+        <sys_package display_value="Event Management &amp;amp; Planning System" source="x_1792507_event_ma">eb0d855f830322106d5af496feaad3a5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Event Management &amp;amp; Planning System">eb0d855f830322106d5af496feaad3a5</sys_scope>
+        <sys_update_name>sys_script_include_70b3bf638303a2106d5af496feaad3ba</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 16:53:43</sys_updated_on>
+    </sys_script_include>
+</record_update>

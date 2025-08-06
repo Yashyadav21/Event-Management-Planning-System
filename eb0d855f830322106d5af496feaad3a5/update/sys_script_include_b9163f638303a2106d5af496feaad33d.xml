@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1792507_event_ma.BudgetUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>BudgetUtils</name>
+        <script><![CDATA[var BudgetUtils = Class.create();
+BudgetUtils.prototype = {
+    initialize: function() {
+    },
+
+	fetchAllBudgets: function() {
+        var res = [];
+        var gr = new GlideRecord('x_1792507_event_ma_budget'); 
+        gr.query();
+        while (gr.next()) {
+            res.push({
+                number: gr.getValue('number'),
+                total_budget: gr.getValue('total_budget'),
+                amount_spent: gr.getValue('amount_spent'),
+                amount_remaining: gr.getValue('amount_remaining'),
+                status: gr.getDisplayValue('status')
+            });
+        }
+        return JSON.stringify(res);
+    },
+
+    TotalBudget: function(id) {
+        var event = new GlideRecord('x_1792507_event_ma_budget');
+        event.addQuery('number', id);
+        event.query();
+        while (event.next()) {
+            event.x_total_budget = event.getValue('amount_remaining') + event.getValue('amount_spent');
+
+            event.update();
+        }
+    },
+	remainingBudget: function(id) {
+		var remaining = 0;
+        var event = new GlideRecord('x_1792507_event_ma_budget');
+        event.addQuery('number', id);
+        event.query();
+        if(event.next()) {
+            remaining = event.getValue('total_budget') - event.getValue('amount_spent');
+        }
+		return remaining;
+    },
+	isApproved:function(id){
+      var budget = new GlideRecord('x_1792507_event_ma_budget');
+        budget.addQuery('number', id);
+        budget.query();
+        while (budget.next()) {
+			if(budget.getValue('status') == 'approved')
+			{
+				return 'Approved';
+			}
+	}
+	return false;
+	},
+	getEventBudget:function(eventid){
+        var res = [];
+        var budget = new GlideRecord('x_1792507_event_ma_budget');
+        budget.addQuery('event_id',eventid);
+        budget.query();
+        if (budget.next()) {
+            res.push({
+                id: budget.getDisplayValue(),
+				totalBudget : budget.getValue('total_budget'),
+            });}
+            return JSON.stringify(res);
+        
+    },
+
+    type: 'BudgetUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 14:53:58</sys_created_on>
+        <sys_id>b9163f638303a2106d5af496feaad33d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>BudgetUtils</sys_name>
+        <sys_package display_value="Event Management &amp;amp; Planning System" source="x_1792507_event_ma">eb0d855f830322106d5af496feaad3a5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Event Management &amp;amp; Planning System">eb0d855f830322106d5af496feaad3a5</sys_scope>
+        <sys_update_name>sys_script_include_b9163f638303a2106d5af496feaad33d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 18:22:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_data_policy_rule">
+    <sys_data_policy_rule action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>contact_number</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_data_policy_rule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 11:37:15</sys_created_on>
+        <sys_data_policy display_value="">ae098fef830f62106d5af496feaad3e0</sys_data_policy>
+        <sys_id>61694723834f62106d5af496feaad3d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>contact_number</sys_name>
+        <sys_package display_value="Event Management &amp;amp; Planning System" source="x_1792507_event_ma">eb0d855f830322106d5af496feaad3a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Event Management &amp;amp; Planning System">eb0d855f830322106d5af496feaad3a5</sys_scope>
+        <sys_update_name>sys_data_policy_rule_61694723834f62106d5af496feaad3d1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 11:37:15</sys_updated_on>
+        <table>x_1792507_event_ma_event_record</table>
+    </sys_data_policy_rule>
+</record_update>

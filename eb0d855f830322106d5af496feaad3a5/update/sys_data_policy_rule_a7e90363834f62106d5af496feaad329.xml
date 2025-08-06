@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_data_policy_rule">
+    <sys_data_policy_rule action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>rating</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_data_policy_rule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-05 11:39:47</sys_created_on>
+        <sys_data_policy display_value="">8a8987ef830f62106d5af496feaad35f</sys_data_policy>
+        <sys_id>a7e90363834f62106d5af496feaad329</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>rating</sys_name>
+        <sys_package display_value="Event Management &amp;amp; Planning System" source="x_1792507_event_ma">eb0d855f830322106d5af496feaad3a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Event Management &amp;amp; Planning System">eb0d855f830322106d5af496feaad3a5</sys_scope>
+        <sys_update_name>sys_data_policy_rule_a7e90363834f62106d5af496feaad329</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-05 11:39:47</sys_updated_on>
+        <table>x_1792507_event_ma_feedback</table>
+    </sys_data_policy_rule>
+</record_update>
